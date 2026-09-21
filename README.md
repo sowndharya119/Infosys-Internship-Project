@@ -1,189 +1,137 @@
-Team-B Petition Management System
+# Team-B Petition Management System
 
-A full-stack web-based Petition Management System developed as part of the Infosys Springboard Internship.
+A full-stack web-based **Petition Management System** developed as part of the **Infosys Springboard Internship**.
 
 The system provides a digital platform for users to create and manage petitions, participate in polls, submit reports, track verification status, and receive notifications. It also includes a dedicated administration panel for managing the application.
 
-📌 Table of Contents
+---
 
-Project Overview
+## 📌 Table of Contents
 
-Objectives
+- [Project Overview](#-project-overview)
+- [Objectives](#-objectives)
+- [Key Features](#-key-features)
+- [System Architecture](#-system-architecture)
+- [Application Flow](#-application-flow)
+- [Petition Workflow](#-petition-workflow)
+- [User Roles](#-user-roles)
+- [Project Structure](#-project-structure)
+- [Technology Stack](#-technology-stack)
+- [Database Structure](#-database-structure)
+- [Getting Started](#-getting-started)
+- [Environment Variables](#-environment-variables)
+- [Running the Project](#-running-the-project)
+- [Authentication Flow](#-authentication-flow)
+- [Admin Panel Flow](#-admin-panel-flow)
+- [Security Features](#-security-features)
+- [Deployment](#-deployment)
+- [Future Enhancements](#-future-enhancements)
+- [Project Information](#-project-information)
+- [GitHub Repository](#-github-repository)
 
-Key Features
+---
 
-System Architecture
+## 🎯 Project Overview
 
-Application Flow
-
-Petition Workflow
-
-User Roles
-
-Project Structure
-
-Technology Stack
-
-Database Structure
-
-Getting Started
-
-Environment Variables
-
-Running the Project
-
-Authentication Flow
-
-Admin Panel Flow
-
-Security Features
-
-Deployment
-
-Future Enhancements
-
-Project Information
-
-GitHub Repository
-
-🎯 Project Overview
-
-The Team-B Petition Management System is designed to provide a centralized digital platform for civic engagement.
+The **Team-B Petition Management System** is designed to provide a centralized digital platform for civic engagement.
 
 Users can:
 
-Register and securely log in
-
-Create petitions
-
-View and participate in petitions
-
-Create and participate in polls
-
-Submit reports
-
-Track verification status
-
-Receive notifications
-
-View officials and relevant information
+- Register and securely log in
+- Create petitions
+- View and participate in petitions
+- Create and participate in polls
+- Submit reports
+- Track verification status
+- Receive notifications
+- View officials and relevant information
 
 Administrators can manage users, petitions, polls, reports, notifications, and verification-related activities through a separate admin panel.
 
-🎯 Objectives
+---
+
+## 🎯 Objectives
 
 The major objectives of the system are:
 
-Provide a centralized platform for digital petitions.
+1. Provide a centralized platform for digital petitions.
+2. Allow users to create and participate in petitions.
+3. Enable users to track petition-related activities.
+4. Provide polling functionality for civic participation.
+5. Support report submission and management.
+6. Provide verification-related functionality.
+7. Provide notifications for important activities.
+8. Provide administrators with a dedicated management interface.
+9. Protect sensitive user information through authentication and security mechanisms.
+10. Provide a scalable architecture for future enhancements.
 
-Allow users to create and participate in petitions.
+---
 
-Enable users to track petition-related activities.
+## ✨ Key Features
 
-Provide polling functionality for civic participation.
+### 👤 User Management
 
-Support report submission and management.
+- User registration
+- Login authentication
+- OTP-based signup
+- Forgot password
+- Password reset
+- JWT-based authentication
+- Protected routes
+- Role-based access control
 
-Provide verification-related functionality.
+### 📝 Petition Management
 
-Provide notifications for important activities.
+- Create petitions
+- View petitions
+- Filter petitions
+- Track petition status
+- Support/sign petitions
+- Manage petition information
 
-Provide administrators with a dedicated management interface.
+### 📊 Poll Management
 
-Protect sensitive user information through authentication and security mechanisms.
+- Create polls
+- View available polls
+- Participate in polls
+- Record votes
+- View poll results
 
-Provide a scalable architecture for future enhancements.
+### 📢 Notification Management
 
-✨ Key Features
+- User notifications
+- Activity notifications
+- System updates
 
-👤 User Management
+### 📄 Report Management
 
-User registration
+- Submit reports
+- View report information
+- Admin management of reports
 
-Login authentication
+### 🔐 Verification
 
-OTP-based signup
+- Upload verification documents
+- Track verification status
+- Manage verification information
 
-Forgot password
-
-Password reset
-
-JWT-based authentication
-
-Protected routes
-
-Role-based access control
-
-📝 Petition Management
-
-Create petitions
-
-View petitions
-
-Filter petitions
-
-Track petition status
-
-Support/sign petitions
-
-Manage petition information
-
-📊 Poll Management
-
-Create polls
-
-View available polls
-
-Participate in polls
-
-Record votes
-
-View poll results
-
-📢 Notification Management
-
-User notifications
-
-Activity notifications
-
-System updates
-
-📄 Report Management
-
-Submit reports
-
-View report information
-
-Admin management of reports
-
-🔐 Verification
-
-Upload verification documents
-
-Track verification status
-
-Manage verification information
-
-👨‍💼 Admin Panel
+### 👨‍💼 Admin Panel
 
 The dedicated admin panel provides administrative functionality for:
 
-User management
+- User management
+- Petition management
+- Poll management
+- Report management
+- Verification management
+- Notification management
+- Dashboard monitoring
 
-Petition management
+---
 
-Poll management
+## 🏗️ System Architecture
 
-Report management
-
-Verification management
-
-Notification management
-
-Dashboard monitoring
-
-🏗️ System Architecture
-
+```mermaid
 flowchart TD
 
     U[User / Citizen] --> FE[React Frontend]
@@ -212,9 +160,13 @@ flowchart TD
 
     ADMIN[Administrator] --> AP[Admin Panel]
     AP --> API
+```
 
-🔄 Application Flow
+---
 
+## 🔄 Application Flow
+
+```mermaid
 flowchart TD
 
     A[Open Application] --> B{Existing User?}
@@ -250,9 +202,13 @@ flowchart TD
     P --> Q[(MongoDB)]
     Q --> R[API Response]
     R --> J
+```
 
-📝 Petition Workflow
+---
 
+## 📝 Petition Workflow
+
+```mermaid
 flowchart LR
 
     A[User Login] --> B[Create Petition]
@@ -280,53 +236,46 @@ flowchart LR
     L --> M[Status Update]
 
     M --> N[User Notification]
+```
 
-👥 User Roles
+---
 
-Citizen / User
+## 👥 User Roles
+
+### Citizen / User
 
 Users can:
 
-Register and log in
+- Register and log in
+- Create petitions
+- View petitions
+- Support petitions
+- Participate in polls
+- Submit reports
+- Track verification status
+- Receive notifications
 
-Create petitions
-
-View petitions
-
-Support petitions
-
-Participate in polls
-
-Submit reports
-
-Track verification status
-
-Receive notifications
-
-Administrator
+### Administrator
 
 Administrators can:
 
-Manage users
+- Manage users
+- Manage petitions
+- Manage polls
+- Manage reports
+- Manage verification
+- Manage notifications
+- Monitor dashboard information
 
-Manage petitions
-
-Manage polls
-
-Manage reports
-
-Manage verification
-
-Manage notifications
-
-Monitor dashboard information
-
-Officials
+### Officials
 
 The system provides functionality for displaying and managing official-related information.
 
-📁 Project Structure
+---
 
+## 📁 Project Structure
+
+```text
 Infosys-Internship-Project/
 │
 ├── backend/
@@ -357,57 +306,32 @@ Infosys-Internship-Project/
 ├── .gitignore
 ├── LICENSE
 └── README.md
+```
 
-🛠️ Technology Stack
+---
 
-Component
+## 🛠️ Technology Stack
 
-Technology
+| Component | Technology |
+|---|---|
+| Frontend | React.js |
+| Styling | Tailwind CSS |
+| Backend | Node.js |
+| API Framework | Express.js |
+| Database | MongoDB |
+| Authentication | JWT |
+| Password Hashing | bcrypt |
+| Email Service | SMTP / Gmail |
+| Build Tool | Vite |
+| Version Control | Git & GitHub |
 
-Frontend
+---
 
-React.js
+## 🗄️ Database Structure
 
-Styling
+The application uses **MongoDB** as its database.
 
-Tailwind CSS
-
-Backend
-
-Node.js
-
-API Framework
-
-Express.js
-
-Database
-
-MongoDB
-
-Authentication
-
-JWT
-
-Password Hashing
-
-bcrypt
-
-Email Service
-
-SMTP / Gmail
-
-Build Tool
-
-Vite
-
-Version Control
-
-Git & GitHub
-
-🗄️ Database Structure
-
-The application uses MongoDB as its database.
-
+```text
 User
  │
  ├── Petition
@@ -421,63 +345,71 @@ User
  ├── Notification
  │
  └── VerificationDocument
+```
 
-Main Collections
+### Main Collections
 
-User – Stores user information and authentication details.
+- `User` – Stores user information and authentication details.
+- `Petition` – Stores petition details.
+- `Signature` – Stores petition participation/signatures.
+- `Poll` – Stores poll information.
+- `Vote` – Stores poll votes.
+- `Report` – Stores submitted reports.
+- `Notification` – Stores user notifications.
+- `VerificationDocument` – Stores verification-related information.
 
-Petition – Stores petition details.
+---
 
-Signature – Stores petition participation/signatures.
+## ⚙️ Getting Started
 
-Poll – Stores poll information.
-
-Vote – Stores poll votes.
-
-Report – Stores submitted reports.
-
-Notification – Stores user notifications.
-
-VerificationDocument – Stores verification-related information.
-
-⚙️ Getting Started
-
-Prerequisites
+### Prerequisites
 
 Make sure the following software is installed:
 
-Node.js
-
-npm
-
-MongoDB or MongoDB Atlas
-
-Git
+- Node.js
+- npm
+- MongoDB or MongoDB Atlas
+- Git
 
 Check Node.js:
 
+```bash
 node --version
+```
 
 Check npm:
 
+```bash
 npm --version
+```
 
-📥 Clone the Repository
+---
 
+## 📥 Clone the Repository
+
+```bash
 git clone https://github.com/sowndharya119/Infosys-Internship-Project.git
+```
 
 Navigate to the project:
 
+```bash
 cd Infosys-Internship-Project
+```
 
-📌 Environment Variables
+---
 
-Create a .env file inside the backend/ folder:
+## 📌 Environment Variables
 
+Create a `.env` file inside the `backend/` folder:
+
+```text
 backend/.env
+```
 
 Use the following template:
 
+```env
 PORT=5000
 
 MONGO_URI=your_mongodb_connection_string
@@ -515,75 +447,91 @@ SMTP_PORT=587
 SMTP_SECURE=false
 
 APP_NAME=Civix
+```
 
-⚠️ Security Note
+### ⚠️ Security Note
 
-Never upload the actual .env file to GitHub.
+Never upload the actual `.env` file to GitHub.
 
 Do not expose:
 
-MongoDB usernames or passwords
+- MongoDB usernames or passwords
+- MongoDB connection strings containing credentials
+- JWT secrets
+- Encryption keys
+- Gmail passwords
+- SMTP credentials
+- API keys
 
-MongoDB connection strings containing credentials
+Keep the real values only in your local `backend/.env` file.
 
-JWT secrets
+Make sure `.env` is included in `.gitignore`.
 
-Encryption keys
+---
 
-Gmail passwords
+## ▶️ Running the Project
 
-SMTP credentials
-
-API keys
-
-Keep the real values only in your local backend/.env file.
-
-Make sure .env is included in .gitignore.
-
-▶️ Running the Project
-
-1. Backend
+### 1. Backend
 
 Open a terminal:
 
+```bash
 cd backend
 npm install
 npm run dev
+```
 
-The backend will run on the port specified in the .env file.
+The backend will run on the port specified in the `.env` file.
 
-2. Frontend
+---
+
+### 2. Frontend
 
 Open another terminal:
 
+```bash
 cd frontend
 npm install
 npm run dev
+```
 
 The frontend will normally be available at:
 
+```text
 http://localhost:5173
+```
 
-3. Admin Panel
+---
+
+### 3. Admin Panel
 
 Open another terminal:
 
+```bash
 cd admin-panel
 npm install
 npm run start
+```
 
 The admin panel is available at:
 
+```text
 http://localhost:5050
+```
 
-🔑 Admin Login
+---
+
+## 🔑 Admin Login
 
 For development/testing, use the administrator credentials configured in your local development environment.
 
-Security: Actual administrator credentials should not be stored in this README or committed to GitHub.
+> **Security:** Actual administrator credentials should not be stored in this README or committed to GitHub.
 
-🔐 Authentication Flow
+---
 
+## 🔐 Authentication Flow
+
+```mermaid
 sequenceDiagram
 
     participant User
@@ -618,9 +566,13 @@ sequenceDiagram
     Backend-->>Frontend: API Response
 
     Frontend-->>User: Display Data
+```
 
-📊 Admin Panel Flow
+---
 
+## 📊 Admin Panel Flow
+
+```mermaid
 flowchart TD
 
     A[Administrator] --> B[Admin Login]
@@ -647,11 +599,15 @@ flowchart TD
     K --> L
 
     L --> M[(MongoDB)]
+```
 
-🧩 Backend Architecture
+---
+
+## 🧩 Backend Architecture
 
 The backend follows a modular architecture:
 
+```text
 Client Request
       │
       ▼
@@ -671,11 +627,15 @@ Client Request
       │
       ▼
    MongoDB
+```
 
 This structure separates routing, authentication, business logic, and database operations.
 
-🎨 Frontend Architecture
+---
 
+## 🎨 Frontend Architecture
+
+```text
 React Application
        │
        ├── Components
@@ -690,137 +650,100 @@ React Application
                 │
                 ▼
           Express Backend
+```
 
-🛡️ Security Features
+---
+
+## 🛡️ Security Features
 
 The application includes:
 
-JWT-based authentication
+- JWT-based authentication
+- Role-based authorization
+- Password hashing using bcrypt
+- Protected API routes
+- Admin authentication middleware
+- Rate limiting
+- File upload restrictions
+- Password reset expiry
+- JWT expiry
+- Environment variable configuration
+- Encryption utilities
+- Request validation
 
-Role-based authorization
+---
 
-Password hashing using bcrypt
-
-Protected API routes
-
-Admin authentication middleware
-
-Rate limiting
-
-File upload restrictions
-
-Password reset expiry
-
-JWT expiry
-
-Environment variable configuration
-
-Encryption utilities
-
-Request validation
-
-🌐 Deployment
+## 🌐 Deployment
 
 The application can be deployed using cloud platforms.
 
-Frontend
+### Frontend
 
 Possible deployment platforms:
 
-Vercel
+- Vercel
+- Netlify
 
-Netlify
-
-Backend
+### Backend
 
 Possible deployment platforms:
 
-Render
+- Render
+- Railway
+- AWS
 
-Railway
-
-AWS
-
-Database
+### Database
 
 MongoDB Atlas can be used for cloud database hosting.
 
-🚀 Future Enhancements
+---
+
+## 🚀 Future Enhancements
 
 Potential future improvements include:
 
-Real-time notifications
+- Real-time notifications
+- Advanced analytics dashboard
+- AI-based petition categorization
+- Multilingual support
+- Mobile application
+- Advanced search and filtering
+- Petition recommendation system
+- Improved document verification
+- Cloud file storage
+- Real-time petition updates
+- Automated CI/CD deployment
 
-Advanced analytics dashboard
+---
 
-AI-based petition categorization
+## 📚 Project Information
 
-Multilingual support
+| Item | Details |
+|---|---|
+| Project | Team-B Petition Management System |
+| Internship | Infosys Springboard Internship |
+| Domain | Digital Civic Engagement |
+| Application Type | Full-Stack Web Application |
+| Architecture | Client-Server Architecture |
+| Database | MongoDB |
+| Backend | Node.js + Express.js |
+| Frontend | React.js |
+| Version Control | Git + GitHub |
 
-Mobile application
+---
 
-Advanced search and filtering
+## 👨‍💻 Team
 
-Petition recommendation system
+Developed collaboratively by **Team-B** as part of the **Infosys Springboard Internship**.
 
-Improved document verification
+---
 
-Cloud file storage
+## 🔗 GitHub Repository
 
-Real-time petition updates
+[Infosys Internship Project](https://github.com/sowndharya119/Infosys-Internship-Project)
 
-Automated CI/CD deployment
+---
 
-📚 Project Information
-
-Item
-
-Details
-
-Project
-
-Team-B Petition Management System
-
-Internship
-
-Infosys Springboard Internship
-
-Domain
-
-Digital Civic Engagement
-
-Application Type
-
-Full-Stack Web Application
-
-Architecture
-
-Client-Server Architecture
-
-Database
-
-MongoDB
-
-Backend
-
-Node.js + Express.js
-
-Frontend
-
-React.js
-
-Version Control
-
-Git + GitHub
-
-👨‍💻 Team
-
-Developed collaboratively by Team-B as part of the Infosys Springboard Internship.
-
-🔗 GitHub Repository
-
-Infosys Internship Project
-
-📄 License
+## 📄 License
 
 This project is developed as part of the Infosys Springboard Internship.
